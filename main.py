@@ -93,13 +93,118 @@ if cab_ano == 'S':
 
         it_duplo_tab()    #Roda o segundo duplo tab pra entrar no ano seguinte
         if meses > 121 - month1:
-            print("caiu 121")
-        elif meses > 25 - month1:
+            j = 1
+            while j < ((121 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
             i = 1
-            while i < 12:
+            while i < month2 - 1:
                 it_mono_tab()
                 i += 1
-            it_duplo_tab()
+        elif meses > 109 - month1:
+            j = 1
+            while j < ((109 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 97 - month1:
+            j = 1
+            while j < ((97 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 85 - month1:
+            j = 1
+            while j < ((85 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 73 - month1:
+            j = 1
+            while j < ((73 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 61 - month1:
+            j = 1
+            while j < ((61 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 49 - month1:
+            j = 1
+            while j < ((49 - month1) / 12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 37 - month1:
+            j=1
+            while j < ((37 - month1)/12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
+            i = 1
+            while i < month2 - 1:
+                it_mono_tab()
+                i += 1
+        elif meses > 25 - month1:
+            j=1
+            while j < ((25 - month1)/12):
+                i = 1
+                while i < 12:
+                    it_mono_tab()
+                    i += 1
+                it_duplo_tab()
+                j += 1
             i = 1
             while i < month2 - 1:
                 it_mono_tab()
