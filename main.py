@@ -2,6 +2,8 @@ import pyautogui
 import time
 import datetime
 
+"Automatiza o preenchimento da curva de carga nas boletas do Thunder via Bot"
+"É necessário estar com a planilha com os imputs aberta e a boleta aberta com o campo inicial selecionado na 3a janela"
 
 cab_ano = input('É cabeça de ano? [S/N]: ')
 date_entry1 = input('Coloque a Data inicial no formato: MM/YYYY: ')
