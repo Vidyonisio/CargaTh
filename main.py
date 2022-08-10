@@ -23,10 +23,11 @@ date2 = datetime.date(year2, month2, day2)
 # diff_m = days // 29
 
 meses = (date2.year - date1.year) * 12 + date2.month - date1.month + 1
-print(meses)
+print("meses = " + str(meses))
 
 
-
+print("M1 = " + str(month1))
+print("M2 = " + str(month2))
 print(date1)
 print(date2)
 
@@ -67,6 +68,48 @@ def it_mono_tab():  #Função de copiar e colar com um tab
     pyautogui.press('tab')
     pyautogui.hotkey('ctrlleft', 'v')
 
+def run_anos(Ref, M1):  #Função para iterar ao longo de vários anos de contrato
+    j = 1
+    while j <((Ref - M1)/12):
+        for i in range(11):
+            it_mono_tab()
+        it_duplo_tab()
+        j+=1
+
+def ult_ano(M2):  #Função para preencher o último ano ajustadamente
+    for i in range(M2 - 2):
+        it_mono_tab()
+
+        # if meses > 121 - month1:
+        #     j = 1
+        #     while j < ((121 - month1) / 12):
+        #         i = 1
+        #         while i < 12:
+        #             it_mono_tab()
+        #             i += 1
+        #         it_duplo_tab()
+        #         j += 1
+        #     i = 1
+        #     while i < month2 - 1:
+        #         it_mono_tab()
+        #         i += 1
+        # elif meses > 109 - month1:
+        #     j = 1
+        #     while j < ((109 - month1) / 12):
+        #         i = 1
+        #         while i < 12:
+        #             it_mono_tab()
+        #             i += 1
+        #         it_duplo_tab()
+        #         j += 1
+        #     i = 1
+        # else:           #Caso em que o segundo ano já é o último, itera até finalizar ele
+        #     i = 1
+        #     while i < month2-1:
+        #         it_mono_tab()
+        #         i += 1
+
+
 
 pyautogui.click()        #Rodada inicial de copiar do campo com mouse no excel e colar no primeiro campo pre-selecionado do thunders
 time.sleep(0.4)
@@ -86,141 +129,54 @@ if cab_ano == 'S':
     it_duplo_tab()    #Iteração dupla inicial por ser cabeça
 
     if year2 > year1:
-        i = 0
-        while i < (12 - month1):   #Peenchimento do primeiro ano até o final
+        for i in range(12 - month1):   #Peenchimento do primeiro ano até o final
+            it_mono_tab()
+            i += 1
+        it_duplo_tab()    #Roda o segundo duplo tab pra entrar no ano seguinte
+
+        if meses+month1 <= 25: # Caso em que o segundo ano já é o último, itera até finalizar ele
+            ult_ano(month2)
+        else:             #Itera até varrer tudo
+            k = 121
+            while k > 24:
+                if meses > k-month1:
+                    run_anos(k,month1)
+                    ult_ano(month2)
+                    break
+                k -= 12
+
+    else:  #Caso em que não pula pra outro ano
+        i = 1
+        while i < (month2-month1):
             it_mono_tab()
             i += 1
 
+if cab_ano == 'N':
+    it_mono_tab() #Iteração simples inicial por ser cabeça
+    if year2 > year1:
+        for i in range(12 - month1):   #Peenchimento do primeiro ano até o final
+            it_mono_tab()
+            i += 1
         it_duplo_tab()    #Roda o segundo duplo tab pra entrar no ano seguinte
-        if meses > 121 - month1:
-            j = 1
-            while j < ((121 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 109 - month1:
-            j = 1
-            while j < ((109 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 97 - month1:
-            j = 1
-            while j < ((97 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 85 - month1:
-            j = 1
-            while j < ((85 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 73 - month1:
-            j = 1
-            while j < ((73 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 61 - month1:
-            j = 1
-            while j < ((61 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 49 - month1:
-            j = 1
-            while j < ((49 - month1) / 12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 37 - month1:
-            j=1
-            while j < ((37 - month1)/12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        elif meses > 25 - month1:
-            j=1
-            while j < ((25 - month1)/12):
-                i = 1
-                while i < 12:
-                    it_mono_tab()
-                    i += 1
-                it_duplo_tab()
-                j += 1
-            i = 1
-            while i < month2 - 1:
-                it_mono_tab()
-                i += 1
-        else:           #Caso em que o segundo ano já é o último, itera até finalizar ele
-            i = 1
-            while i < month2-1:
-                it_mono_tab()
-                i += 1
+
+        if meses+month1 <= 25: # Caso em que o segundo ano já é o último, itera até finalizar ele
+            ult_ano(month2)
+        else:             #Itera até varrer tudo
+            k = 121
+            while k > 24:
+                if meses > k-month1:
+                    run_anos(k,month1)
+                    ult_ano(month2)
+                    break
+                k -= 12
+
     else:  #Caso em que não pula pra outro ano
         i = 1
         while i < (month2-month1):
             it_mono_tab()
             i += 1
 else:
-    print("nada")
+    print("Escreve S ou N k#$*#")
 
 pyautogui.keyDown('alt')
 time.sleep(.2)
@@ -228,7 +184,6 @@ pyautogui.press('tab')
 time.sleep(.2)
 pyautogui.keyUp('alt')
 pyautogui.press('esc')
-print(i)
 
 
 
