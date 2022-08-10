@@ -80,35 +80,6 @@ def ult_ano(M2):  #Função para preencher o último ano ajustadamente
     for i in range(M2 - 2):
         it_mono_tab()
 
-        # if meses > 121 - month1:
-        #     j = 1
-        #     while j < ((121 - month1) / 12):
-        #         i = 1
-        #         while i < 12:
-        #             it_mono_tab()
-        #             i += 1
-        #         it_duplo_tab()
-        #         j += 1
-        #     i = 1
-        #     while i < month2 - 1:
-        #         it_mono_tab()
-        #         i += 1
-        # elif meses > 109 - month1:
-        #     j = 1
-        #     while j < ((109 - month1) / 12):
-        #         i = 1
-        #         while i < 12:
-        #             it_mono_tab()
-        #             i += 1
-        #         it_duplo_tab()
-        #         j += 1
-        #     i = 1
-        # else:           #Caso em que o segundo ano já é o último, itera até finalizar ele
-        #     i = 1
-        #     while i < month2-1:
-        #         it_mono_tab()
-        #         i += 1
-
 
 
 pyautogui.click()        #Rodada inicial de copiar do campo com mouse no excel e colar no primeiro campo pre-selecionado do thunders
@@ -152,7 +123,7 @@ if cab_ano == 'S':
             i += 1
 
 if cab_ano == 'N':
-    it_mono_tab() #Iteração simples inicial por ser cabeça
+    it_mono_tab() #Iteração simples inicial por não ser cabeça
     if year2 > year1:
         for i in range(12 - month1):   #Peenchimento do primeiro ano até o final
             it_mono_tab()
@@ -176,7 +147,7 @@ if cab_ano == 'N':
             it_mono_tab()
             i += 1
 else:
-    print("Escreve S ou N k#$*#")
+    print("Escreve S ou N, gente boa")
 
 pyautogui.keyDown('alt')
 time.sleep(.2)
